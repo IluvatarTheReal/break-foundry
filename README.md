@@ -9,3 +9,7 @@ System that will allow you to play BREAK!! in FoundryVTT! This isn't a replaceme
 ## Contributing
 
 If you want to contribute, feel free to contact me on discord Iluvatar#4367
+
+## Support BREAK!!
+
+Go support BREAK!! on [breakrpg.com](https://www.breakrpg.com/)
