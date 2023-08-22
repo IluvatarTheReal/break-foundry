@@ -1,73 +1,141 @@
 {
-  "Actor": {
-    "types": ["character", "npc"],
-    "templates": {
-      "base": {
-        "health": {
-          "value": 10,
-          "min": 0,
-          "max": 10
-        },
-        "power": {
-          "value": 5,
-          "min": 0,
-          "max": 5
-        },
-        "biography": ""
-      }
-    },
-    "character": {
-      "templates": ["base"],
-      "attributes": {
-        "level": {
-          "value": 1
-        }
-      },
-      "abilities": {
-        "str": {
-          "value": 10
-        },
-        "dex": {
-          "value": 10
-        },
-        "con": {
-          "value": 10
-        },
-        "int": {
-          "value": 10
-        },
-        "wis": {
-          "value": 10
-        },
-        "cha": {
-          "value": 10
-        }
-      }
-    },
-    "npc": {
-      "templates": ["base"],
-      "cr": 0
-    }
-  },
-  "Item": {
-    "types": ["item", "feature", "spell"],
-    "templates": {
-      "base": {
-        "description": ""
-      }
-    },
-    "item": {
-      "templates": ["base"],
-      "quantity": 1,
-      "weight": 0,
-      "formula": "d20 + @str.mod + ceil(@lvl / 2)"
-    },
-    "feature": {
-      "templates": ["base"]
-    },
-    "spell": {
-      "templates": ["base"],
-      "spellLevel": 1
-    }
-  }
+	"Actor": {
+		"types": ["character", "npc"],
+		"templates": {
+			"common": {
+				"combat_values": {
+					"hearts": { "value": 2, "max": null, "temp": 0, "tempmax": 0 },
+					"speed": "avg",
+					"defense": { "flat": null, "calc": "default", "formula": "" }
+				},
+				"aptitudes": {
+					"might": { "value": 10, "max": null },
+					"deft": { "value": 10, "max": null },
+					"grit": { "value": 10, "max": null },
+					"insight": { "value": 10, "max": null },
+					"aura": { "value": 10, "max": null }
+				},
+				"details": {
+					"biography": { "value": "", "public": "" },
+					"description": { "value": "", "public": "" }
+				},
+				"currency": {
+					"stone": 0,
+					"coin": 0,
+					"gem": 0
+				}
+			}
+		},
+		"character": {
+			"templates": ["base"],
+			"attributes": {
+				"rank": {
+					"value": 1
+				}
+			},
+			"inventory": { "max": 10 },
+			"details": {
+				"languages": {
+					"value": [],
+					"custom": ""
+				},
+				"purviews": {
+					"value": [],
+					"custom": ""
+				}
+			},
+			"traits": {
+				"armorProf": {
+					"value": [],
+					"custom": ""
+				},
+				"meleeProf": {
+					"value": [],
+					"custom": ""
+				},
+				"missleProf": {
+					"value": [],
+					"custom": ""
+				}
+			}
+		},
+		"npc": {
+			"templates": ["base"],
+			"rank": 0
+		}
+	},
+	"Item": {
+		"types": [
+			"item",
+			"weapon",
+			"equipment",
+			"feature",
+			"calling",
+			"species",
+			"homeland",
+			"trait",
+			"quirk",
+			"gear",
+			"ability"
+		],
+		"templates": {
+			"base": {
+				"description": ""
+			}
+		},
+		"item": {
+			"templates": ["base"],
+			"quantity": 1,
+			"weight": 0
+		},
+		"weapon": {
+			"templates": ["itemDescription", "physicalItem", "activatedEffect", "action", "mountable"],
+			"weaponType": "standard",
+			"baseItem": "",
+			"properties": {},
+			"proficient": null
+		},
+		"equipment": {
+			"templates": ["itemDescription", "physicalItem", "activatedEffect", "action", "mountable"],
+			"armor": {
+				"type": "light",
+				"bonus": null
+			},
+			"baseItem": ""
+		},
+		"feature": {
+			"templates": ["itemDescription", "activatedEffect", "action"],
+			"type": {
+				"value": "",
+				"subtype": ""
+			},
+			"requirements": "",
+			"recharge": {
+				"value": null,
+				"charged": false
+			}
+		},
+		"calling": {
+			"templates": ["itemDescription"],
+			"identifier": "",
+			"ranks": 1,
+			"advancement": []
+		},
+		"species": {
+			"templates": ["itemDescription"],
+			"identifier": "",
+			"size": "medium"
+		},
+		"homeland": {
+			"templates": ["itemDescription"]
+		},
+		"trait": {
+			"templates": ["itemDescription"]
+		},
+		"quirk": {
+			"templates": ["itemDescription"],
+			"identifier": "",
+			"description": ""
+		}
+	}
 }
