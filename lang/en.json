@@ -1,22 +1,22 @@
 {
-  "BOILERPLATE.AbilityStr": "Strength",
-  "BOILERPLATE.AbilityCon": "Constitution",
-  "BOILERPLATE.AbilityDex": "Dexterity",
-  "BOILERPLATE.AbilityInt": "Intelligence",
-  "BOILERPLATE.AbilityWis": "Wisdom",
-  "BOILERPLATE.AbilityCha": "Charisma",
+	"BOILERPLATE.AptitudeMight": "Might",
+	"BOILERPLATE.AptitudeDeft": "Deftness",
+	"BOILERPLATE.AptitudeGrit": "Grit",
+	"BOILERPLATE.AptitudeInsight": "Insight",
+	"BOILERPLATE.AptitudeAura": "Aura",
 
-  "BOILERPLATE.AbilityStrAbbr": "str",
-  "BOILERPLATE.AbilityConAbbr": "con",
-  "BOILERPLATE.AbilityDexAbbr": "dex",
-  "BOILERPLATE.AbilityIntAbbr": "int",
-  "BOILERPLATE.AbilityWisAbbr": "wis",
-  "BOILERPLATE.AbilityChaAbbr": "cha",
+	"BOILERPLATE.AptitudeMightAbbr": "might",
+	"BOILERPLATE.AptitudeDeftAbbr": "deft",
+	"BOILERPLATE.AptitudeGritAbbr": "grit",
+	"BOILERPLATE.AptitudeInsightAbbr": "insight",
+	"BOILERPLATE.AptitudeAuraAbbr": "aura",
 
-  "BOILERPLATE.EffectCreate": "Create Effect",
-  "BOILERPLATE.EffectToggle": "Toggle Effect",
-  "BOILERPLATE.EffectEdit": "Edit Effect",
-  "BOILERPLATE.EffectDelete": "Delete Effect",
+	"BOILERPLATE.EffectCreate": "Create Effect",
+	"BOILERPLATE.EffectToggle": "Toggle Effect",
+	"BOILERPLATE.EffectEdit": "Edit Effect",
+	"BOILERPLATE.EffectDelete": "Delete Effect",
 
-  "BOILERPLATE.Add": "Add"
+	"BOILERPLATE.Add": "Add",
+	"BOILERPLATE.Calling": "Calling",
+	"BOILERPLATE.Species": "Species"
 }

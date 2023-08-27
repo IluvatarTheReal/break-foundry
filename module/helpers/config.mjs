@@ -4,20 +4,18 @@ export const BOILERPLATE = {};
  * The set of Ability Scores used within the sytem.
  * @type {Object}
  */
- BOILERPLATE.abilities = {
-  "str": "BOILERPLATE.AbilityStr",
-  "dex": "BOILERPLATE.AbilityDex",
-  "con": "BOILERPLATE.AbilityCon",
-  "int": "BOILERPLATE.AbilityInt",
-  "wis": "BOILERPLATE.AbilityWis",
-  "cha": "BOILERPLATE.AbilityCha"
-};
+ BOILERPLATE.aptitudes = {
+		might: "BOILERPLATE.AptitudeMight",
+		deft: "BOILERPLATE.AptitudeDeft",
+		grit: "BOILERPLATE.AptitudeGrit",
+		insight: "BOILERPLATE.AptitudeInsight",
+		aura: "BOILERPLATE.AptitudeAura"
+ };
 
-BOILERPLATE.abilityAbbreviations = {
-  "str": "BOILERPLATE.AbilityStrAbbr",
-  "dex": "BOILERPLATE.AbilityDexAbbr",
-  "con": "BOILERPLATE.AbilityConAbbr",
-  "int": "BOILERPLATE.AbilityIntAbbr",
-  "wis": "BOILERPLATE.AbilityWisAbbr",
-  "cha": "BOILERPLATE.AbilityChaAbbr"
-};
+ BOILERPLATE.aptitudeAbbreviations = {
+		might: "BOILERPLATE.AptitudeMightAbbr",
+		deft: "BOILERPLATE.AptitudeDeftAbbr",
+		grit: "BOILERPLATE.AptitudeGritAbbr",
+		insight: "BOILERPLATE.AptitudeInsightAbbr",
+		aura: "BOILERPLATE.AptitudeAuraAbbr"
+ };

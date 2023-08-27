@@ -5,11 +5,9 @@
  */
  export const preloadHandlebarsTemplates = async function() {
   return loadTemplates([
-
-    // Actor partials.
-    "systems/boilerplate/templates/actor/parts/actor-features.html",
-    "systems/boilerplate/templates/actor/parts/actor-items.html",
-    "systems/boilerplate/templates/actor/parts/actor-spells.html",
-    "systems/boilerplate/templates/actor/parts/actor-effects.html",
-  ]);
+		// Actor partials.
+		"systems/break/templates/actor/parts/actor-features.html",
+		"systems/break/templates/actor/parts/actor-items.html",
+		"systems/break/templates/actor/parts/actor-effects.html"
+	]);
 };

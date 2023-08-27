@@ -1,39 +1,48 @@
 {
 	"Actor": {
-		"types": ["character", "npc"],
+		"types": ["character", "npc", "monster"],
 		"templates": {
-			"common": {
-				"combat_values": {
+			"resources": {
+				"combatValues": {
 					"hearts": { "value": 2, "max": null, "temp": 0, "tempmax": 0 },
 					"speed": "avg",
 					"defense": { "flat": null, "calc": "default", "formula": "" }
 				},
 				"aptitudes": {
-					"might": { "value": 10, "max": null },
-					"deft": { "value": 10, "max": null },
-					"grit": { "value": 10, "max": null },
-					"insight": { "value": 10, "max": null },
-					"aura": { "value": 10, "max": null }
-				},
-				"details": {
-					"biography": { "value": "", "public": "" },
-					"description": { "value": "", "public": "" }
-				},
-				"currency": {
-					"stone": 0,
-					"coin": 0,
-					"gem": 0
+					"might": { "value": 10, "max": null, "min": 0 },
+					"deft": { "value": 10, "max": null, "min": 0 },
+					"grit": { "value": 10, "max": null, "min": 0 },
+					"insight": { "value": 10, "max": null, "min": 0 },
+					"aura": { "value": 10, "max": null, "min": 0 }
 				}
+			},
+			"details": {
+				"biography": { "value": "", "public": "" },
+				"description": { "value": "", "public": "" }
+			},
+			"abilities": {},
+			"yield": {},
+			"adversaryInfo": {
+				"type": [],
+				"size": [],
+				"allegiance": []
+			},
+			"currency": {
+				"stone": 0,
+				"coin": 0,
+				"gem": 0
 			}
 		},
 		"character": {
-			"templates": ["base"],
-			"attributes": {
-				"rank": {
-					"value": 1
-				}
+			"templates": ["resources"],
+			"rank": {
+				"value": 1
 			},
-			"inventory": { "max": 10 },
+			"experience": {
+				"current": 0,
+				"nextLevel": 0
+			},
+			"inventory": { "slots": 10, "contents": [] },
 			"details": {
 				"languages": {
 					"value": [],
@@ -42,7 +51,11 @@
 				"purviews": {
 					"value": [],
 					"custom": ""
-				}
+				},
+				"calling": { "value": "" },
+				"species": { "value": "" },
+				"homeland": { "value": "" },
+				"history": { "value": "" }
 			},
 			"traits": {
 				"armorProf": {
@@ -60,7 +73,10 @@
 			}
 		},
 		"npc": {
-			"templates": ["base"],
+			"templates": ["resources"]
+		},
+		"monster": {
+			"templates": ["resources", "adversaryInfo"],
 			"rank": 0
 		}
 	},
@@ -81,7 +97,12 @@
 		"templates": {
 			"base": {
 				"description": ""
-			}
+			},
+			"itemDescription": {},
+			"physicalItem": {},
+			"activatedEffect": {},
+			"action": {},
+			"mountable": {}
 		},
 		"item": {
 			"templates": ["base"],

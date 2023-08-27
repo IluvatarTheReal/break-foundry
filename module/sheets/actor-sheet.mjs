@@ -10,7 +10,7 @@ export class BoilerplateActorSheet extends ActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ["boilerplate", "sheet", "actor"],
-      template: "systems/boilerplate/templates/actor/actor-sheet.html",
+      template: "systems/break/templates/actor/actor-sheet.html",
       width: 600,
       height: 600,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "features" }]
@@ -19,7 +19,7 @@ export class BoilerplateActorSheet extends ActorSheet {
 
   /** @override */
   get template() {
-    return `systems/boilerplate/templates/actor/actor-${this.actor.type}-sheet.html`;
+    return `systems/break/templates/actor/actor-${this.actor.type}-sheet.html`;
   }
 
   /* -------------------------------------------- */
@@ -67,11 +67,11 @@ export class BoilerplateActorSheet extends ActorSheet {
    * @return {undefined}
    */
   _prepareCharacterData(context) {
-    // Handle ability scores.
-    for (let [k, v] of Object.entries(context.system.abilities)) {
-      v.label = game.i18n.localize(CONFIG.BOILERPLATE.abilities[k]) ?? k;
-    }
-  }
+		// Handle ability scores.
+		for (let [k, v] of Object.entries(context.system.aptitudes)) {
+		  v.label = game.i18n.localize(CONFIG.BOILERPLATE.aptitudes[k]) ?? k;
+		}
+	}
 
   /**
    * Organize and classify Items for Character sheets.
@@ -81,46 +81,44 @@ export class BoilerplateActorSheet extends ActorSheet {
    * @return {undefined}
    */
   _prepareItems(context) {
-    // Initialize containers.
-    const gear = [];
-    const features = [];
-    const spells = {
-      0: [],
-      1: [],
-      2: [],
-      3: [],
-      4: [],
-      5: [],
-      6: [],
-      7: [],
-      8: [],
-      9: []
-    };
-
-    // Iterate through items, allocating to containers
-    for (let i of context.items) {
-      i.img = i.img || DEFAULT_TOKEN;
-      // Append to gear.
-      if (i.type === 'item') {
-        gear.push(i);
-      }
-      // Append to features.
-      else if (i.type === 'feature') {
-        features.push(i);
-      }
-      // Append to spells.
-      else if (i.type === 'spell') {
-        if (i.system.spellLevel != undefined) {
-          spells[i.system.spellLevel].push(i);
-        }
-      }
-    }
-
-    // Assign and return
-    context.gear = gear;
-    context.features = features;
-    context.spells = spells;
-  }
+		// Initialize containers.
+		// const gear = [];
+		// const features = [];
+		// const spells = {
+		//   0: [],
+		//   1: [],
+		//   2: [],
+		//   3: [],
+		//   4: [],
+		//   5: [],
+		//   6: [],
+		//   7: [],
+		//   8: [],
+		//   9: []
+		// };
+		// // Iterate through items, allocating to containers
+		// for (let i of context.items) {
+		//   i.img = i.img || DEFAULT_TOKEN;
+		//   // Append to gear.
+		//   if (i.type === 'item') {
+		//     gear.push(i);
+		//   }
+		//   // Append to features.
+		//   else if (i.type === 'feature') {
+		//     features.push(i);
+		//   }
+		//   // Append to spells.
+		//   else if (i.type === 'spell') {
+		//     if (i.system.spellLevel != undefined) {
+		//       spells[i.system.spellLevel].push(i);
+		//     }
+		//   }
+		// }
+		// // Assign and return
+		// context.gear = gear;
+		// context.features = features;
+		// context.spells = spells;
+	}
 
   /* -------------------------------------------- */
 
@@ -200,30 +198,30 @@ export class BoilerplateActorSheet extends ActorSheet {
    * @private
    */
   _onRoll(event) {
-    event.preventDefault();
-    const element = event.currentTarget;
-    const dataset = element.dataset;
+		event.preventDefault();
+		const element = event.currentTarget;
+		const dataset = element.dataset;
 
-    // Handle item rolls.
-    if (dataset.rollType) {
-      if (dataset.rollType == 'item') {
-        const itemId = element.closest('.item').dataset.itemId;
-        const item = this.actor.items.get(itemId);
-        if (item) return item.roll();
-      }
-    }
+		// Handle item rolls.
+		if (dataset.rollType) {
+			if (dataset.rollType == "item") {
+				const itemId = element.closest(".item").dataset.itemId;
+				const item = this.actor.items.get(itemId);
+				if (item) return item.roll();
+			}
+		}
 
-    // Handle rolls that supply the formula directly.
-    if (dataset.roll) {
-      let label = dataset.label ? `[ability] ${dataset.label}` : '';
-      let roll = new Roll(dataset.roll, this.actor.getRollData());
-      roll.toMessage({
-        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        flavor: label,
-        rollMode: game.settings.get('core', 'rollMode'),
-      });
-      return roll;
-    }
-  }
+		// Handle rolls that supply the formula directly.
+		if (dataset.roll) {
+			let label = dataset.label ? `[aptitude] ${dataset.label}: ${dataset.target}` : "";
+			let roll = new Roll(dataset.roll, this.actor.getRollData());
+			roll.toMessage({
+				speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+				flavor: label,
+				rollMode: game.settings.get("core", "rollMode")
+			});
+			return roll;
+		}
+	}
 
 }
