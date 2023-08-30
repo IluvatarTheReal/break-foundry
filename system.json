@@ -1,6 +1,6 @@
 {
 	"id": "break",
-	"title": "BREAK!! for FoundryVTT",
+	"title": "BREAK!! for FoundryVTT (Unofficial)",
 	"description": "System for BREAK!! RPG",
 	"version": "1.0.0",
 	"compatibility": {
@@ -13,8 +13,8 @@
 			"name": "Iluvatar"
 		}
 	],
-	"esmodules": ["module/boilerplate.mjs"],
-	"styles": ["css/boilerplate.css"],
+	"esmodules": ["module/break.mjs"],
+	"styles": ["css/break.css"],
 	"scripts": [],
 	"packs": [],
 	"languages": [

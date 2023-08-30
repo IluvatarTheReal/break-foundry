@@ -2,19 +2,17 @@
 	"Actor": {
 		"types": ["character", "npc", "monster"],
 		"templates": {
-			"resources": {
-				"combatValues": {
-					"hearts": { "value": 2, "max": null, "temp": 0, "tempmax": 0 },
-					"speed": "avg",
-					"defense": { "flat": null, "calc": "default", "formula": "" }
-				},
-				"aptitudes": {
-					"might": { "value": 10, "max": null, "min": 0 },
-					"deft": { "value": 10, "max": null, "min": 0 },
-					"grit": { "value": 10, "max": null, "min": 0 },
-					"insight": { "value": 10, "max": null, "min": 0 },
-					"aura": { "value": 10, "max": null, "min": 0 }
-				}
+			"combatValues": {
+				"hearts": { "value": 2, "max": null, "temp": 0, "tempmax": 0, "modifiers": [] },
+				"speed": { "base": "average", "modifiers": [] },
+				"defense": { "base": 10, "modifiers": [] }
+			},
+			"aptitudes": {
+				"might": { "value": 10, "max": null, "min": 0, "traitMod": 0 },
+				"deft": { "value": 10, "max": null, "min": 0, "traitMod": 0 },
+				"grit": { "value": 10, "max": null, "min": 0, "traitMod": 0 },
+				"insight": { "value": 10, "max": null, "min": 0, "traitMod": 0 },
+				"aura": { "value": 10, "max": null, "min": 0, "traitMod": 0 }
 			},
 			"details": {
 				"biography": { "value": "", "public": "" },
@@ -56,27 +54,16 @@
 				"species": { "value": "" },
 				"homeland": { "value": "" },
 				"history": { "value": "" }
-			},
-			"traits": {
-				"armorProf": {
-					"value": [],
-					"custom": ""
-				},
-				"meleeProf": {
-					"value": [],
-					"custom": ""
-				},
-				"missleProf": {
-					"value": [],
-					"custom": ""
-				}
 			}
 		},
 		"npc": {
-			"templates": ["resources"]
+			"templates": ["combatValues", "aptitudes"],
+			"details": {
+				"species": { "value": "" }
+			}
 		},
 		"monster": {
-			"templates": ["resources", "adversaryInfo"],
+			"templates": ["combatValues", "aptitudes", "adversaryInfo"],
 			"rank": 0
 		}
 	},
@@ -84,6 +71,7 @@
 		"types": [
 			"item",
 			"weapon",
+			"armour",
 			"equipment",
 			"feature",
 			"calling",
@@ -96,11 +84,48 @@
 		],
 		"templates": {
 			"base": {
-				"description": ""
+				"description": {
+					"value": ""
+				}
 			},
 			"itemDescription": {},
-			"physicalItem": {},
-			"activatedEffect": {},
+			"physicalItem": {
+				"quantity": 1,
+				"slots": 1,
+				"price": {
+					"value": 0,
+					"currency": "coin"
+				},
+				"rarity": "",
+				"equipped": false
+			},
+			"activatedEffect": {
+				"activation": {
+					"type": "",
+					"cost": null,
+					"condition": ""
+				},
+				"duration": {
+					"value": "",
+					"units": ""
+				},
+				"target": {
+					"value": null,
+					"units": "",
+					"type": ""
+				},
+				"uses": {
+					"value": null,
+					"max": "",
+					"per": null,
+					"recovery": ""
+				},
+				"consume": {
+					"type": "",
+					"target": null,
+					"amount": null
+				}
+			},
 			"action": {},
 			"mountable": {}
 		},
@@ -110,14 +135,18 @@
 			"weight": 0
 		},
 		"weapon": {
-			"templates": ["itemDescription", "physicalItem", "activatedEffect", "action", "mountable"],
+			"templates": ["base", "physicalItem", "activatedEffect", "action"],
+			"weaponGroup": "melee",
 			"weaponType": "standard",
-			"baseItem": "",
-			"properties": {},
-			"proficient": null
+			"properties": {}
+		},
+		"armour": {
+			"templates": ["base", "physicalItem"],
+			"armorType": "light",
+			"properties": {}
 		},
 		"equipment": {
-			"templates": ["itemDescription", "physicalItem", "activatedEffect", "action", "mountable"],
+			"templates": ["base", "physicalItem", "activatedEffect", "action", "mountable"],
 			"armor": {
 				"type": "light",
 				"bonus": null
@@ -125,7 +154,7 @@
 			"baseItem": ""
 		},
 		"feature": {
-			"templates": ["itemDescription", "activatedEffect", "action"],
+			"templates": ["base", "activatedEffect", "action"],
 			"type": {
 				"value": "",
 				"subtype": ""
@@ -137,24 +166,24 @@
 			}
 		},
 		"calling": {
-			"templates": ["itemDescription"],
+			"templates": ["base"],
 			"identifier": "",
-			"ranks": 1,
-			"advancement": []
+			"advancement": [],
+			"proficiencies": []
 		},
 		"species": {
-			"templates": ["itemDescription"],
+			"templates": ["base"],
 			"identifier": "",
 			"size": "medium"
 		},
 		"homeland": {
-			"templates": ["itemDescription"]
+			"templates": ["base"]
 		},
 		"trait": {
-			"templates": ["itemDescription"]
+			"templates": ["base"]
 		},
 		"quirk": {
-			"templates": ["itemDescription"],
+			"templates": ["base"],
 			"identifier": "",
 			"description": ""
 		}
