@@ -9,7 +9,7 @@ export class BreakActorSheet extends ActorSheet {
 	static get defaultOptions() {
 		return mergeObject(super.defaultOptions, {
 			classes: ["break", "sheet", "actor"],
-			template: "systems/break/templates/actor/actor-sheet.html",
+			template: "systems/break/templates/actor/actor-sheet.hbs",
 			width: 600,
 			height: 600,
 			tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "features" }]
@@ -20,7 +20,7 @@ export class BreakActorSheet extends ActorSheet {
 	get template() {
 		// For when we diverse between full and limited sheet access
 		// if( !game.user.isGM && this.actor.limited) return "systems/break/templates/actors/limited-sheet.html"
-		return `systems/break/templates/actor/actor-${this.actor.type}-sheet.html`;
+		return `systems/break/templates/actor/actor-${this.actor.type}-sheet.hbs`;
 	}
 
 	/* -------------------------------------------- */

@@ -139,7 +139,7 @@ export async function preloadHandlebarsTemplates() {
 
 	const paths = {};
 	for (const path of partials) {
-		paths[path.replace(".hbs", ".html")] = path;
+		paths[path] = path;
 		paths[`break.${path.split("/").pop().replace(".hbs", "")}`] = path;
 	}
 

@@ -66,7 +66,7 @@
         {{!-- For the main features list, span the right two columns --}}
         <section class="main grid-span-2">
           {{!-- This is a Handlebars partial. They're stored in the `/parts` folder next to this sheet, and defined in module/helpers/templates.mjs --}}
-          {{> "systems/break/templates/actor/parts/actor-features.html"}}
+          {{> "systems/break/templates/actor/parts/actor-features.hbs"}}
         </section>
 
       </section>
@@ -80,12 +80,12 @@
 
     {{!-- Owned Items Tab --}}
     <div class="tab items" data-group="primary" data-tab="items">
-       {{> "systems/break/templates/actor/parts/actor-items.html"}}
+       {{> "systems/break/templates/actor/parts/actor-items.hbs"}}
     </div>
 
     {{!-- Active Effects Tab --}}
     <div class="tab effects flexcol" data-group="primary" data-tab="effects">
-      {{> "systems/break/templates/actor/parts/actor-effects.html"}}
+      {{> "systems/break/templates/actor/parts/actor-effects.hbs"}}
     </div>
 
   </section>
