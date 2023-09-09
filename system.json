@@ -1,34 +1,36 @@
 {
-  "id": "break!!",
-  "title": "BREAK!! for FoundryVTT",
-  "description": "System for BREAK!! RPG",
-  "version": "1.0.0",
-  "compatibility": {
-    "minimum": 10,
-    "verified": "10.288",
-    "maximum": 10
-  },
-  "authors": [{
-    "name": "Iluvatar"
-  }],
-  "esmodules": ["module/boilerplate.mjs"],
-  "styles": ["css/boilerplate.css"],
-  "scripts": [],
-  "packs": [],
-  "languages": [
-    {
-      "lang": "en",
-      "name": "English",
-      "path": "lang/en.json"
-    }
-  ],
-  "gridDistance": 1,
-  "gridUnits": "area",
-  "primaryTokenAttribute": "health",
-  "secondaryTokenAttribute": "power",
-  "url": "https://github.com/IluvatarTheReal/break-foundry",
-  "manifest": "https://github.com/IluvatarTheReal/break-foundry/blob/master/system.json",
-  "download": "",
-  "license": "LICENSE.txt",
-  "changelog": "CHANGELOG.md"
+	"id": "break",
+	"title": "BREAK!! for FoundryVTT (Unofficial)",
+	"description": "System for BREAK!! RPG",
+	"version": "1.0.0",
+	"compatibility": {
+		"minimum": "11",
+		"verified": "11.288",
+		"maximum": "11"
+	},
+	"authors": [
+		{
+			"name": "Iluvatar"
+		}
+	],
+	"esmodules": ["module/break.mjs"],
+	"styles": ["css/break.css"],
+	"scripts": [],
+	"packs": [],
+	"languages": [
+		{
+			"lang": "en",
+			"name": "English",
+			"path": "lang/en.json"
+		}
+	],
+	"gridDistance": 1,
+	"gridUnits": "area",
+	"primaryTokenAttribute": "health",
+	"secondaryTokenAttribute": "power",
+	"url": "https://github.com/IluvatarTheReal/break-foundry",
+	"manifest": "https://github.com/IluvatarTheReal/break-foundry/blob/master/system.json",
+	"download": "",
+	"license": "LICENSE.txt",
+	"changelog": "CHANGELOG.md"
 }

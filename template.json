@@ -1,73 +1,191 @@
 {
-  "Actor": {
-    "types": ["character", "npc"],
-    "templates": {
-      "base": {
-        "health": {
-          "value": 10,
-          "min": 0,
-          "max": 10
-        },
-        "power": {
-          "value": 5,
-          "min": 0,
-          "max": 5
-        },
-        "biography": ""
-      }
-    },
-    "character": {
-      "templates": ["base"],
-      "attributes": {
-        "level": {
-          "value": 1
-        }
-      },
-      "abilities": {
-        "str": {
-          "value": 10
-        },
-        "dex": {
-          "value": 10
-        },
-        "con": {
-          "value": 10
-        },
-        "int": {
-          "value": 10
-        },
-        "wis": {
-          "value": 10
-        },
-        "cha": {
-          "value": 10
-        }
-      }
-    },
-    "npc": {
-      "templates": ["base"],
-      "cr": 0
-    }
-  },
-  "Item": {
-    "types": ["item", "feature", "spell"],
-    "templates": {
-      "base": {
-        "description": ""
-      }
-    },
-    "item": {
-      "templates": ["base"],
-      "quantity": 1,
-      "weight": 0,
-      "formula": "d20 + @str.mod + ceil(@lvl / 2)"
-    },
-    "feature": {
-      "templates": ["base"]
-    },
-    "spell": {
-      "templates": ["base"],
-      "spellLevel": 1
-    }
-  }
+	"Actor": {
+		"types": ["character", "npc", "monster"],
+		"templates": {
+			"combatValues": {
+				"hearts": { "value": 2, "max": null, "temp": 0, "tempmax": 0, "modifiers": [] },
+				"speed": { "base": "average", "modifiers": [] },
+				"defense": { "base": 10, "modifiers": [] }
+			},
+			"aptitudes": {
+				"might": { "value": 10, "max": null, "min": 0, "traitMod": 0 },
+				"deft": { "value": 10, "max": null, "min": 0, "traitMod": 0 },
+				"grit": { "value": 10, "max": null, "min": 0, "traitMod": 0 },
+				"insight": { "value": 10, "max": null, "min": 0, "traitMod": 0 },
+				"aura": { "value": 10, "max": null, "min": 0, "traitMod": 0 }
+			},
+			"details": {
+				"biography": { "value": "", "public": "" },
+				"description": { "value": "", "public": "" }
+			},
+			"abilities": {},
+			"yield": {},
+			"adversaryInfo": {
+				"type": [],
+				"size": [],
+				"allegiance": []
+			},
+			"currency": {
+				"stone": 0,
+				"coin": 0,
+				"gem": 0
+			}
+		},
+		"character": {
+			"templates": ["resources"],
+			"rank": {
+				"value": 1
+			},
+			"experience": {
+				"current": 0,
+				"nextLevel": 0
+			},
+			"inventory": { "slots": 10, "contents": [] },
+			"details": {
+				"languages": {
+					"value": [],
+					"custom": ""
+				},
+				"purviews": {
+					"value": [],
+					"custom": ""
+				},
+				"calling": { "value": "" },
+				"species": { "value": "" },
+				"homeland": { "value": "" },
+				"history": { "value": "" }
+			}
+		},
+		"npc": {
+			"templates": ["combatValues", "aptitudes"],
+			"details": {
+				"species": { "value": "" }
+			}
+		},
+		"monster": {
+			"templates": ["combatValues", "aptitudes", "adversaryInfo"],
+			"rank": 0
+		}
+	},
+	"Item": {
+		"types": [
+			"item",
+			"weapon",
+			"armour",
+			"equipment",
+			"feature",
+			"calling",
+			"species",
+			"homeland",
+			"trait",
+			"quirk",
+			"gear",
+			"ability"
+		],
+		"templates": {
+			"base": {
+				"description": {
+					"value": ""
+				}
+			},
+			"itemDescription": {},
+			"physicalItem": {
+				"quantity": 1,
+				"slots": 1,
+				"price": {
+					"value": 0,
+					"currency": "coin"
+				},
+				"rarity": "",
+				"equipped": false
+			},
+			"activatedEffect": {
+				"activation": {
+					"type": "",
+					"cost": null,
+					"condition": ""
+				},
+				"duration": {
+					"value": "",
+					"units": ""
+				},
+				"target": {
+					"value": null,
+					"units": "",
+					"type": ""
+				},
+				"uses": {
+					"value": null,
+					"max": "",
+					"per": null,
+					"recovery": ""
+				},
+				"consume": {
+					"type": "",
+					"target": null,
+					"amount": null
+				}
+			},
+			"action": {},
+			"mountable": {}
+		},
+		"item": {
+			"templates": ["base"],
+			"quantity": 1,
+			"weight": 0
+		},
+		"weapon": {
+			"templates": ["base", "physicalItem", "activatedEffect", "action"],
+			"weaponGroup": "melee",
+			"weaponType": "standard",
+			"properties": {}
+		},
+		"armour": {
+			"templates": ["base", "physicalItem"],
+			"armorType": "light",
+			"properties": {}
+		},
+		"equipment": {
+			"templates": ["base", "physicalItem", "activatedEffect", "action", "mountable"],
+			"armor": {
+				"type": "light",
+				"bonus": null
+			},
+			"baseItem": ""
+		},
+		"feature": {
+			"templates": ["base", "activatedEffect", "action"],
+			"type": {
+				"value": "",
+				"subtype": ""
+			},
+			"requirements": "",
+			"recharge": {
+				"value": null,
+				"charged": false
+			}
+		},
+		"calling": {
+			"templates": ["base"],
+			"identifier": "",
+			"advancement": [],
+			"proficiencies": []
+		},
+		"species": {
+			"templates": ["base"],
+			"identifier": "",
+			"size": "medium"
+		},
+		"homeland": {
+			"templates": ["base"]
+		},
+		"trait": {
+			"templates": ["base"]
+		},
+		"quirk": {
+			"templates": ["base"],
+			"identifier": "",
+			"description": ""
+		}
+	}
 }

@@ -1,22 +1,22 @@
 {
-  "BOILERPLATE.AbilityStr": "Strength",
-  "BOILERPLATE.AbilityCon": "Constitution",
-  "BOILERPLATE.AbilityDex": "Dexterity",
-  "BOILERPLATE.AbilityInt": "Intelligence",
-  "BOILERPLATE.AbilityWis": "Wisdom",
-  "BOILERPLATE.AbilityCha": "Charisma",
+	"BREAK.AptitudeMight": "Might",
+	"BREAK.AptitudeDeft": "Deftness",
+	"BREAK.AptitudeGrit": "Grit",
+	"BREAK.AptitudeInsight": "Insight",
+	"BREAK.AptitudeAura": "Aura",
 
-  "BOILERPLATE.AbilityStrAbbr": "str",
-  "BOILERPLATE.AbilityConAbbr": "con",
-  "BOILERPLATE.AbilityDexAbbr": "dex",
-  "BOILERPLATE.AbilityIntAbbr": "int",
-  "BOILERPLATE.AbilityWisAbbr": "wis",
-  "BOILERPLATE.AbilityChaAbbr": "cha",
+	"BREAK.AptitudeMightAbbr": "might",
+	"BREAK.AptitudeDeftAbbr": "deft",
+	"BREAK.AptitudeGritAbbr": "grit",
+	"BREAK.AptitudeInsightAbbr": "insight",
+	"BREAK.AptitudeAuraAbbr": "aura",
 
-  "BOILERPLATE.EffectCreate": "Create Effect",
-  "BOILERPLATE.EffectToggle": "Toggle Effect",
-  "BOILERPLATE.EffectEdit": "Edit Effect",
-  "BOILERPLATE.EffectDelete": "Delete Effect",
+	"BREAK.EffectCreate": "Create Effect",
+	"BREAK.EffectToggle": "Toggle Effect",
+	"BREAK.EffectEdit": "Edit Effect",
+	"BREAK.EffectDelete": "Delete Effect",
 
-  "BOILERPLATE.Add": "Add"
+	"BREAK.Add": "Add",
+	"BREAK.Calling": "Calling",
+	"BREAK.Species": "Species"
 }
