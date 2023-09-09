@@ -13,7 +13,7 @@ https://foundryvtt.wiki/en/development/guides/SD-tutorial
 
 ## Contributing
 
-If you want to contribute, feel free to contact me on discord Iluvatar#4367
+If you want to contribute, feel free to contact iluvatar or cyberspark on discord.
 
 ## Support BREAK!!
 
