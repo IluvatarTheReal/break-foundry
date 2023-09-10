@@ -17,13 +17,35 @@
 
   {{!-- Sheet Header --}}
   <header class="sheet-header">
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
     <div class="header-fields">
-      <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
       {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
       use both the "grid" and "grid-Ncol" class where "N" can be any number
       from 1 to 12 and will create that number of columns.  --}}
+      <div class="grid grid-3col">
+        <div class="resource flex-group-center">
+          <label for="actor.name" class="resource-label">Name</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <input type="text" name="actor.name" value="{{actor.name}}" placeholder="Name"/>
+          </div>
+        </div>
+        <div class="resource flex-group-center">
+<label for="system.details.species.value" class="resource-label">Species</label>
+        <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="system.details.species.value" value="{{system.details.species.value}}" placeholder="Species"/>
+        </div>
+        </div>
+        <div class="calling-flex-group-center" >
+          <label for="system.details.calling.value" class="calling-label">Calling</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <input type="text" name="system.details.calling.value" value="{{system.details.calling.value}}" placeholder="Calling"/>          
+          </div>
+          <div class="resource-content flexrow flex-center flex-between">
+            <input type="text" name="system.rank.value" value="{{system.rank.value}}" data-dtype="Number"/>
+          </div>
+        </div>
+      </div>
       <div class="resources grid grid-3col">
-
         {{!-- "flex-group-center" is also defined in the _grid.scss file
         and it will add a small amount of padding, a border, and will
         center all of its child elements content and text. --}}
@@ -37,10 +59,12 @@
         </div>
 
         <div class="resource flex-group-center">
-          <label for="system.rank.value" class="resource-label">Level</label>
-          <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="system.rank.value" value="{{system.rank.value}}" data-dtype="Number"/>
-          </div>
+          <label for="system.combatValues.defense.value" class="resource-label">Defense</label>
+          <input type="text" name="system.combatValues.defense.value" value="{{system.combatValues.defense.value}}" data-dtype="Number" />
+        </div>
+        <div class="resource flex-group-center">
+          <label for="system.combatValues.attack.value" class="resource-label">Attack</label>
+          <input type="text" name="system.combatValues.attack.value" value="{{system.combatValues.attack.value}}" data-dtype="Number" />
         </div>
 
       </div>
@@ -51,7 +75,7 @@
   <nav class="sheet-tabs tabs" data-group="primary">
     {{!-- Default tab is specified in actor-sheet.mjs --}}
     <a class="item" data-tab="features">Features</a>
-    <a class="item" data-tab="description">Description</a>
+    <a class="item" data-tab="description">Details</a>
     <a class="item" data-tab="items">Items</a>
     <a class="item" data-tab="effects">Effects</a>
   </nav>
@@ -61,29 +85,22 @@
 
     {{!-- Owned Features Tab --}}
     <div class="tab features" data-group="primary" data-tab="features">
-      <section class="grid grid-3col">
-        <aside class="sidebar">
+      <div class="grid grid-3col no-margin">
+        <div class="sidebar">
 
           {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
           use both the "grid" and "grid-Ncol" class where "N" can be any number
           from 1 to 12 and will create that number of columns.  --}}
           <div class="abilities flexcol">
             {{#each system.aptitudes as |aptitude key|}}
-            <div class="ability flexrow flex-group-center">
+            <div class="ability flexrow flex-group-center" data-aptitude="{{key}}">
               <label for="system.aptitudes.{{key}}.value" class="resource-label rollable flexlarge align-left" data-roll="d20" data-label="{{aptitude.label}}" data-target="{{aptitude.value}}">{{aptitude.label}}</label>
               <input type="text" name="system.aptitudes.{{key}}.value" value="{{aptitude.value}}" data-dtype="Number"/>
             </div>
             {{/each}}
           </div>
-        </aside>
-
-        {{!-- For the main features list, span the right two columns --}}
-        <section class="main grid-span-2">
-          {{!-- This is a Handlebars partial. They're stored in the `/parts` folder next to this sheet, and defined in module/helpers/templates.mjs --}}
-          {{> "systems/break/templates/actor/parts/actor-features.hbs"}}
-        </section>
-
-      </section>
+        </div>
+      </div>
     </div>
 
     {{!-- Biography Tab --}}
@@ -94,12 +111,12 @@
 
     {{!-- Owned Items Tab --}}
     <div class="tab items" data-group="primary" data-tab="items">
-       {{> "systems/break/templates/actor/parts/actor-items.hbs"}}
+       {{> "systems/break/templates/actors/parts/actor-items.hbs"}}
     </div>
 
     {{!-- Active Effects Tab --}}
     <div class="tab effects flexcol" data-group="primary" data-tab="effects">
-      {{> "systems/break/templates/actor/parts/actor-effects.hbs"}}
+      {{> "systems/break/templates/actors/parts/actor-effects.hbs"}}
     </div>
 
   </section>

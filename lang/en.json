@@ -11,6 +11,7 @@
 	"BREAK.AptitudeInsightAbbr": "insight",
 	"BREAK.AptitudeAuraAbbr": "aura",
 
+	"BREAK.ItemCreate": "Create Item",
 	"BREAK.EffectCreate": "Create Effect",
 	"BREAK.EffectToggle": "Toggle Effect",
 	"BREAK.EffectEdit": "Edit Effect",
@@ -18,5 +19,11 @@
 
 	"BREAK.Add": "Add",
 	"BREAK.Calling": "Calling",
-	"BREAK.Species": "Species"
+	"BREAK.Species": "Species",
+	"BREAK.RollSituationalBonus": "Situatioal Bonus?",
+	"BREAK.AptitudePromptTitle": "{aptitude} Check",
+	"BREAK.RollMode": "Roll Mode",
+	"BREAK.Edge": "Edge",
+	"BREAK.Normal": "Normal",
+	"BREAK.Snag": "Snag"
 }
