@@ -32,7 +32,7 @@
 			}
 		},
 		"character": {
-			"templates": ["resources"],
+			"templates": ["combatValues", "aptitudes", "details"],
 			"rank": {
 				"value": 1
 			},

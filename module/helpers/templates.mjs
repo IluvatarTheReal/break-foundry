@@ -6,8 +6,8 @@
  export const preloadHandlebarsTemplates = async function() {
   return loadTemplates([
 		// Actor partials.
-		"systems/break/templates/actor/parts/actor-features.hbs",
-		"systems/break/templates/actor/parts/actor-items.hbs",
-		"systems/break/templates/actor/parts/actor-effects.hbs"
+		"systems/break/templates/actors/parts/actor-features.hbs",
+		"systems/break/templates/actors/parts/actor-items.hbs",
+		"systems/break/templates/actors/parts/actor-effects.hbs"
 	]);
 };

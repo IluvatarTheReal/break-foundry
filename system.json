@@ -1,7 +1,7 @@
 {
 	"id": "break",
 	"title": "BREAK!! for FoundryVTT (Unofficial)",
-	"description": "System for BREAK!! RPG",
+	"description": "An unofficial system for the BREAK!! RPG",
 	"version": "1.0.0",
 	"compatibility": {
 		"minimum": "11",
@@ -11,6 +11,9 @@
 	"authors": [
 		{
 			"name": "Iluvatar"
+		},
+		{
+			"name": "Cyberspark"
 		}
 	],
 	"esmodules": ["module/break.mjs"],

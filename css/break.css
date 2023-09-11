@@ -158,6 +158,9 @@
 .grid-span-12 {
 	grid-column-end: span 12;
 }
+.no-margin {
+	margin: 0;
+}
 
 .flex-group-center,
 .flex-group-left,
@@ -294,6 +297,19 @@
 }
 .break .resource-label {
 	font-weight: bold;
+}
+.break .calling-label {
+	font-weight: bold;
+	grid-area: label;
+}
+.break .calling-flex-group-center {	
+    display: grid;
+	text-align: center;
+    grid-template-areas:
+        "label label"
+        "calling-input rank-input";
+    grid-template-columns: 1fr 30px;
+    grid-template-rows: auto auto;
 }
 .break .heart-wrapper {
   display: flex;
