@@ -8,7 +8,7 @@
 System that will allow you to play BREAK!! in FoundryVTT! This isn't a replacement for the source material, you're still going to need to buy the BREAK!! module in order to use this as the system only provides the framework to play the game.
 
 ### Supported features
-- Character sheet (halfway there)
+- Character sheet (halfway there for rolls!)
 
 More to come...
 
