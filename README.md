@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="https://i.imgur.com/xzfpJOA.png">
+  <img src="https://i.imgur.com/QEbvR4o.png">
 </p>
 
 # break-foundry
